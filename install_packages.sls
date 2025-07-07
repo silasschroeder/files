@@ -4,6 +4,6 @@ install_kubernetes_app:
 
 run_kubernetes_app:
   cmd.run:
-    - name: kubectl apply -f https://github.com/silasschroeder/files/blob/main/k8s-entities.yaml
+    - name: kubectl apply -f https://raw.githubusercontent.com/silasschroeder/files/main/k8s-entities.yaml
     - require:
       - pkg: install_kubernetes_app
