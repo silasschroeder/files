@@ -42,7 +42,7 @@ spec:
     spec:
       containers:
         - name: stateful-container
-          image: silasschroeder/stateful-app:v1.0.5
+          image: silasschroeder/stateful-app:v1.0.8
           ports:
             - containerPort: 3000
           volumeMounts:
@@ -91,3 +91,16 @@ spec:
                 name: stateful-app-service
                 port:
                   number: 80
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: stateful-app
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: stateful-app
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 50
