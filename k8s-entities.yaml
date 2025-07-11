@@ -4,15 +4,16 @@ kind: PersistentVolume
 metadata:
   name: my-app-pv
   labels:
-    type: local
+    type: nfs
 spec:
   storageClassName: manual
   capacity:
     storage: 10Gi
   accessModes:
     - ReadWriteMany
-  hostPath:
-    path: "/mnt/data"
+  nfs:
+    path: /mnt/data
+    server: <master-ip> # REPLACE
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -31,7 +32,7 @@ kind: Deployment
 metadata:
   name: stateful-app
 spec:
-  replicas: 1
+  replicas: 3 # Kann jetzt auch >1 sein, da der Speicher geteilt ist
   selector:
     matchLabels:
       app: stateful-app
@@ -71,7 +72,7 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 3000
-  type: ClusterIP
+  type: LoadBalancer
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
