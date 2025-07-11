@@ -103,5 +103,5 @@ spec:
     kind: Deployment
     name: stateful-app
   minReplicas: 1
-  maxReplicas: 10
-  targetCPUUtilizationPercentage: 50
+  maxReplicas: 30
+  targetCPUUtilizationPercentage: 30
