@@ -32,7 +32,7 @@ kind: Deployment
 metadata:
   name: stateful-app
 spec:
-  replicas: 3 # Kann jetzt auch >1 sein, da der Speicher geteilt ist
+  replicas: 3
   selector:
     matchLabels:
       app: stateful-app
