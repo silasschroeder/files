@@ -1,6 +1,6 @@
 install_kubernetes_app:
   cmd.run:
-    - name: curl -sfL https://get.k3s.io | K3S_URL=<master_ip> K3S_TOKEN=<k8s_token> sh -
+    - name: curl -sfL https://get.k3s.io | K3S_URL=https://<master_ip> K3S_TOKEN=<k8s_token> sh -
     - shell: /bin/bash
   
 nfs_connect:
