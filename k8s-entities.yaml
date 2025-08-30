@@ -43,7 +43,7 @@ spec:
     spec:
       containers:
         - name: stateful-container
-          image: silasschroeder/stateful-app:v1.0.8
+          image: silasschroeder/stateful-app:v1.1
           ports:
             - containerPort: 3000
           volumeMounts:
