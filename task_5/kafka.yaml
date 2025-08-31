@@ -1,3 +1,4 @@
+# THIS TOPIC IS FOR SENDING DATA FROM THE FRONT END TO THE DATA CONFIGURATION PIPELINE
 apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaTopic
 metadata:
@@ -10,6 +11,7 @@ spec:
   config:
     retention.ms: 62400
 ---
+# THIS TOPIC IS FOR SENDING THE MODEL RESULTS BACK TO THE FRONT END
 apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaTopic
 metadata:
@@ -22,6 +24,7 @@ spec:
   config:
     retention.ms: 62400
 ---
+# KAFKA CLUSTER WITH KRAFT MODE (NO ZOOKEEPER)
 apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaNodePool
 metadata:
@@ -36,6 +39,7 @@ spec:
   storage:
     type: ephemeral
 ---
+# KAFKA CLUSTER WITH KRAFT MODE (NO ZOOKEEPER)
 apiVersion: kafka.strimzi.io/v1beta2
 kind: Kafka
 metadata:

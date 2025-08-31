@@ -1,3 +1,4 @@
+# MINIO CONFIGURATIONS TO MAKE SHOWCASE REPRODUCIBLE WITH NO MANUAL STEPS
 auth:
   rootUser: minioadmin
   rootPassword: minioadminpassword

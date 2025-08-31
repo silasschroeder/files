@@ -1,3 +1,4 @@
+# JOB TO TRAIN THE MODEL ONCE USING A CONTAINERIZED APPLICATION
 apiVersion: batch/v1
 kind: Job
 metadata:

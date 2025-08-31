@@ -1,3 +1,5 @@
+# DASK HELM CHART VALUES TO DEPLOY A DASK CLUSTER WITH 2 WORKERS
+# Worker and scheduler images are the same as the job image to ensure all dependencies are given and the same
 worker:
   replicas: 2
   image:

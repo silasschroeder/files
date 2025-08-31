@@ -1,3 +1,4 @@
+# DEPLOYMENT FOR PODS RUNNING THE FRONT END APPLICATION
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -21,6 +22,7 @@ spec:
           ports:
             - containerPort: 3000
 ---
+# SERVICE TO EXPOSE THE FRONT END APPLICATION INTERNALLY IN THE CLUSTER
 kind: Service
 apiVersion: v1
 metadata:
@@ -33,6 +35,7 @@ spec:
       port: 3000
       targetPort: 3000
 ---
+# INGRESS TO EXPOSE THE FRONT END APPLICATION TO THE OUTSIDE WORLD
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:

@@ -1,3 +1,4 @@
+# DEPLOYMENT SO AT LEAST ONE REPLICA OF THE FAUST CONSUMER IS THERE TO RECIEVE DATA
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -17,6 +18,7 @@ spec:
           image: silasschroeder/stream-processing:1.0
           imagePullPolicy: Always
 ---
+# KEDA SCALED OBJECT TO SCALE THE FAUST CONSUMER BASED ON THE LAG OF THE KAFKA TOPIC
 apiVersion: keda.sh/v1alpha1
 kind: ScaledObject
 metadata:
