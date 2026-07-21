@@ -1,0 +1,9 @@
+google-genai
+chromadb
+sentence-transformers
+rank-bm25
+numpy
+scikit-learn
+nltk
+pypdf2
+pandas
